@@ -21,6 +21,15 @@ startBtn.onclick = async () => {
   }
 };
 
+pauseBtn.onclick = () => (running = false);
+resumeBtn.onclick = () => {
+  if (!running) {
+    running = true;
+    processFrame();
+  }
+};
+
+
 
 
 
