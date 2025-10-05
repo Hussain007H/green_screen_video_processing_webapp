@@ -22,6 +22,18 @@ video, canvas {
 .controls {
   margin: 15px 0;
 }
+button, input {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  background: #00ff88;
+  color: #000;
+  cursor: pointer;
+}
+
+
 
 
 
