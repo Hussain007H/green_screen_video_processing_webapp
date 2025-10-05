@@ -5,3 +5,7 @@ const startBtn = document.getElementById("start");
 const pauseBtn = document.getElementById("pause");
 const resumeBtn = document.getElementById("resume");
 const bgInput = document.getElementById("backgroundInput");
+let background = null;
+let stream = null;
+let running = false;
+
