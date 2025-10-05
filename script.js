@@ -10,7 +10,7 @@ let background = null;
 let stream = null;
 let running = false;
 
-startBtn.onclick = asy () => {
+startBtn.onclick = async () => {
   try {
     stream = await navigator.mediaDevices.getUserMedia({ video: true });
     video.srcObject = stream;
@@ -20,6 +20,7 @@ startBtn.onclick = asy () => {
     alert("Error accessing webcam: " + err);
   }
 };
+
 
 
 
