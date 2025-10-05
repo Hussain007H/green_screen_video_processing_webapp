@@ -9,7 +9,8 @@ const bgInput = document.getElementById("backgroundInput");
 let background = null;
 let stream = null;
 let running = false;
-startBtn.onclick = async () => {
+
+startBtn.onclick = asy () => {
   try {
     stream = await navigator.mediaDevices.getUserMedia({ video: true });
     video.srcObject = stream;
@@ -19,6 +20,7 @@ startBtn.onclick = async () => {
     alert("Error accessing webcam: " + err);
   }
 };
+
 
 
 
