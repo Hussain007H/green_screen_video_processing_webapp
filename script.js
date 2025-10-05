@@ -28,6 +28,15 @@ resumeBtn.onclick = () => {
     processFrame();
   }
 };
+bgInput.onchange = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    const url = URL.createObjectURL(file);
+    if (file.type.startsWith("image")) {
+      background = new Image();
+      background.src = url;
+    } 
+
 
 
 
