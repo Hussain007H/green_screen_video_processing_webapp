@@ -44,6 +44,37 @@ bgInput.onchange = (e) => {
   }
 };
 
+function processFrame() {
+  if (!running) return;
+
+  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  let frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let data = frame.data;
+
+  for (let i = 0; i < data.length; i += 4) {
+    let r = data[i];
+    let g = data[i + 1];
+    let b = data[i + 2];
+
+    // Simple green detection
+    if (g > 100 && r < 100 && b < 100) {
+      data[i + 3] = 0; // make transparent
+    }
+  }
+
+  ctx.putImageData(frame, 0, 0);
+
+  // Draw background
+  if (background) {
+    ctx.globalCompositeOperation = "destination-over";
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    ctx.globalCompositeOperation = "source-over";
+  }
+
+  requestAnimationFrame(processFrame);
+}
+
+
 
 
 
