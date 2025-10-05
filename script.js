@@ -56,15 +56,13 @@ function processFrame() {
     let g = data[i + 1];
     let b = data[i + 2];
 
-    // Simple green detection
     if (g > 100 && r < 100 && b < 100) {
       data[i + 3] = 0; // make transparent
     }
   }
 
   ctx.putImageData(frame, 0, 0);
-
-  // Draw background
+  
   if (background) {
     ctx.globalCompositeOperation = "destination-over";
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
@@ -73,6 +71,7 @@ function processFrame() {
 
   requestAnimationFrame(processFrame);
 }
+
 
 
 
