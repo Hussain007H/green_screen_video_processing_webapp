@@ -35,7 +35,16 @@ bgInput.onchange = (e) => {
     if (file.type.startsWith("image")) {
       background = new Image();
       background.src = url;
-    } 
+    } else if (file.type.startsWith("video")) {
+      background = document.createElement("video");
+      background.src = url;
+      background.loop = true;
+      background.play();
+    }
+  }
+};
+
+
 
 
 
